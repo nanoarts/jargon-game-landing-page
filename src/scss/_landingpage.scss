@@ -1,0 +1,173 @@
+@import "variables";
+@import "mixin";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+#app {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+  
+    margin: 0 10px;
+  }
+// COMPONENT A : HEADER / NAV
+.containerGlobal {
+    overflow: hidden;
+}
+header {
+    
+    
+    .linkPlateform {
+        background-color: $blueHackages;
+        color: white;
+        height: 65px;
+        width: 100%;
+        @include box-shadow( "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)" );
+
+        h3 {
+          font-size: 20px;
+        }
+        a {
+          padding: 5px;
+          background-color: $greenHackages;
+          color: white;
+        }
+      
+    }
+    nav {
+        background-color: $greenHackages;
+        color: white;
+        height: 70px;
+        @include box-shadow( "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)" );
+        
+        a {
+            color: white;
+            text-decoration: none;
+            :hover{
+                text-decoration: beige;
+            }
+        }
+      }
+
+
+
+}
+
+// COMPONENT B : whatIsJargon
+
+
+.whatIsJargon { 
+    @include hackagesgradient;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        font-family: 'Rammetto One', cursive;
+        color: white;
+        font-size: 98px;
+    }
+    h3 {
+        color: white;
+        font-size: 20px;
+    }
+    .horizontal_flex {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        a {
+           padding: 20px;
+           width: 222px;
+           color: white;
+           margin: 50px;
+         }
+        a:first-child {
+            background-color: $greenHackages;
+        }
+        a:last-child {
+            border: 1px solid white;
+        }
+    }
+}
+
+.keepMe {
+    background-color: $greenHackages;
+    color: whitesmoke;
+    margin: 50px auto;
+    width: 95%;
+    padding: 10px;
+    form {
+        height: 50px;
+        background-color: $blueHackages;
+        &:before{
+            height: 50px;
+            padding: 0 20px;
+            background-color: $blueHackages;
+            content: "EMAIL"; 
+        }
+        input[type="email"] {
+            border: none;
+            height: 50px;
+            width: 400px;  
+            color: grey;  
+        }
+        input[type="submit"] {
+            height: 50px;
+            padding: 0 20px;
+            background-color: $blueHackages;
+            border: none;  
+            color: white; 
+        }
+    }
+
+}
+
+// COMPONENT C : whyJoin
+
+
+.whyJoin {
+    width: 100%;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+    background: greenyellow;
+    .title {
+        align-self: center;    
+    }
+    .listIcon {
+        align-self: center;
+    }
+    ul li div {
+        border: 1px solid 
+    }
+    // justify-content: center;
+}
+
+
+
+
+
+
+
+
+footer {
+  background-color: $blueHackages;
+  div {
+    color: white;
+  }
+}
