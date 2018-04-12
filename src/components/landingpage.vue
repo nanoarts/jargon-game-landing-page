@@ -1,69 +1,58 @@
 <template>
     <div class="containerGlobal">
 <!-- COMPONENT A : header -->
-      <header>
-        <div class="linkPlateform">
-            <div class="row">
-                <div class="col-10 p-3"><h3>See all upcoming training at Hackages.io plateform</h3></div>
-                <div class="col p-3"> <a  class="btn btn-success" href="http://www.hackages.io">Hackages.io</a></div>
+        <header>
+            <div class="linkPlateform">           
+                    <div><h3>See all upcoming training at Hackages.io plateform</h3></div>
+                    <div><a class="waves-effect waves-light btn" href="http://www.hackages.io">Hackages.io</a></div>
             </div>
-        </div>
-        <nav>
-            <div class="row">
-                <div class="col p-3">
-                    <img src="../assets/img/logo_40px.png" alt="logo Tech jargon game">
-                </div>
-                <div class="col-11 p-3">
-                    <ul>
-                        <li><a href="">The game</a></li>
-                        <li><a href="">Try it</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Session</a></li>
-                        <li><a href="">Board Game</a></li>
-                    </ul>
-                </div>
-
-            </div>
+          
+                <nav >
+                        <div>
+                            <img src="../assets/img/logo_40px.png" alt="logo Tech jargon game">
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a class="waves-effect waves-teal btn-flat" href="#whatIsJargon">The game</a></li>
+                                <li><a class="waves-effect waves-teal btn-flat" href="#keepMe">Try it</a></li>
+                                <li><a class="waves-effect waves-teal btn-flat" href="">About</a></li>
+                                <li><a class="waves-effect waves-teal btn-flat" href="">Session</a></li>
+                                <li><a class="waves-effect waves-teal btn-flat" href="">Board Game</a></li>
+                            </ul>
+                        </div>
+                </nav>
             
-        </nav>
-    </header>
+        </header>
 
 <!-- COMPONENT B : whatIsJargon -->
-    <section class="whatIsJargon" >
-            <div  class="row ">
-                <h1 class="mx-auto ">TECH JARGON GAMES</h1>
-            </div>
-        
-            <div class="row">
-                <h3 class="mx-auto" >Do you often get lost in technological jargon? You speak the same language as your colleague, but still you don’t understand each other?</h3>
-            </div>
+        <section id="whatIsJargon" class="whatIsJargon" >
+              
+                    <h1>TECH JARGON GAMES</h1>              
+                    <h3  >Do you often get lost in technological jargon? You speak the same language as your colleague, but still you don’t understand each other?</h3>
+                <div class="horizontal_flex">
+                    <a class="btn-large waves-effect" href="#">Let's try</a>
+                    <a class="btn-large waves-effect" href="#">Learn More</a>
+                </div>
 
-            <div class="horizontal_flex">
-                <a class="btn" href="#">Let's try</a>
-                <a class="btn" href="#">Learn More</a>
+            <div class="mascot">
+                <img src="../assets/img/mascot_320px.png" alt="Mascot Super Squirrel"> 
             </div>
-
-        <div class="Mascot">
-            <img src="../assets/img/mascot_320px.png" alt="Mascot Super Squirrel"> 
-        </div>
-    </section>
+        </section>
 <!-- COMPONENT C : keep me up to date -->
-<section class="keepMe">
-    <div class="row">
-        <b-col class="d-inline">
-            <h3>Keep me up to date!<br>
-                Notify me when trainings and more are announced.</h3>
-        </b-col>
-        <b-col class="d-inline">
-            <form action="" method="post">
-                <input type="email" name="email" id="" placeholder="Email Address">
-                <input type="submit" value="SEND">
-            </form>
-        </b-col>
-    </div>
-
- 
-</section>
+        <section id="keepMe" class="keepMe">
+                <div class="text">
+                    <h3>Keep me up to date!<br>
+                        Notify me when trainings and more are announced.</h3>
+                </div>
+                    <form action="" method="post">
+                        <label for="email">email
+                            <input type="email" name="email" id="email" placeholder="Email Address">
+                        </label>
+                          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                    </form>
+        </section>
 <!-- COMPONENT D : whyJoin -->
     <section class="whyJoin">
         <div class="title">
@@ -72,27 +61,31 @@
         <div class="listIcon">
             <ul>
                 <li>
-                    <div>ICONS 1 </div>
+                    <img src="../assets/img/increase.png" alt="">
                     <p>Increase
                         <br> Understand Terms</p>
                 </li>
                 <li>
-                    <div> ICONS 2</div>
+                    <img src="../assets/img/increase.png" alt="">
+                    
                     <p>Connections
                         <br> between technologies</p>
                 </li>
                 <li>
-                    <div> ICONS 3</div>
+                    <img src="../assets/img/increase.png" alt="">
+                    
                     <p>Better
                         <br> Communication</p>
                 </li>
                 <li>
-                    <div>ICONS 4</div>
+                    <img src="../assets/img/increase.png" alt="">
+                    
                     <p>Expert
                         <br> mentors</p>
                 </li>
                 <li>
-                    <div>ICONS 5</div>
+                    <img src="../assets/img/increase.png" alt="">
+                   
                     <p>Interactive
                         <br> workshop</p>
                 </li>

@@ -1,10 +1,22 @@
 @import "variables";
 @import "mixin";
+@import "reset";
+
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Rammetto+One');
-@import 'bootstrap/dist/css/bootstrap.css';
-@import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+@import "~susy/sass/susy";
+@import "~materialize-css/sass/materialize";
+
+
+
+$susy: (
+  'columns': susy-repeat(16),
+  'gutters':0.5em,
+  'spread': 'wide',
+  'container-spread': 'wide',
+);
 
 #app {
     font-family: 'Roboto', sans-serif;
@@ -20,42 +32,88 @@
   
     margin: 0 10px;
   }
+
+
 // COMPONENT A : HEADER / NAV
 .containerGlobal {
     overflow: hidden;
 }
 header {
-    
-    
     .linkPlateform {
         background-color: $blueHackages;
         color: white;
         height: 65px;
-        width: 100%;
-        @include box-shadow( "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)" );
-
-        h3 {
-          font-size: 20px;
+        
+       
+        div:first-child {
+            float: left;
+            width: span(14 of 16);
+            // background: green;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            
+            h3 {
+                font-size: 20px;
+                margin-left: gutter();      
+            }
         }
-        a {
-          padding: 5px;
-          background-color: $greenHackages;
-          color: white;
-        }
-      
+        div:last-child {
+            float: right;
+            width: span(2 of 16);
+            // background: red;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            a {
+                background-color: $greenHackages;
+                color: white;
+                // padding: 20px;
+                border-radius:4px;
+                &:hover{
+                    @extend .z-depth-1;
+                }
+                
+              } 
+        }  
     }
     nav {
         background-color: $greenHackages;
         color: white;
         height: 70px;
-        @include box-shadow( "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)" );
+        @extend .z-depth-1;
         
-        a {
-            color: white;
-            text-decoration: none;
-            :hover{
-                text-decoration: beige;
+    
+        div:first-child {
+            float: left;
+            width: span(1 of 16);
+            // background: yellow;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                margin-left: gutter();
+               
             }
+        }
+        div:last-child {
+            float: right;
+            width: span(15 of 16);
+            // background: blue;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 12px;
+                :hover{
+                    text-decoration: beige;
+                }
+        }
+       
         }
       }
 
@@ -74,6 +132,7 @@ header {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     h1 {
         font-family: 'Rammetto One', cursive;
         color: white;
@@ -89,48 +148,55 @@ header {
         flex-flow: row wrap;
         justify-content: space-around;
         a {
-           padding: 20px;
+          
            width: 222px;
            color: white;
            margin: 50px;
+        //    padding: 20px;
          }
         a:first-child {
             background-color: $greenHackages;
+            z-index: 1;
+            @extend .z-depth-1;
+            &:hover {
+                z-index: 0;   
+                @extend .z-depth-2;
+                             
+            }
         }
         a:last-child {
             border: 1px solid white;
+            background-color: none;
+            text-decoration: none;
         }
     }
+    // .mascot {
+    //     img {
+    //         background-color: white;
+    //     }
+    // }
 }
 
 .keepMe {
     background-color: $greenHackages;
     color: whitesmoke;
     margin: 50px auto;
-    width: 95%;
-    padding: 10px;
+    overflow: hidden;
+    padding: 20px 0;
+    width: span(15 of 16);
+    display: flex;
+    align-items: center;
+    .text {
+        width: span(10 of 15);
+        float: left;
+        margin-left: gutter(of 16);
+        h3 {
+            font-size: 20px; 
+        }
+    }
     form {
-        height: 50px;
-        background-color: $blueHackages;
-        &:before{
-            height: 50px;
-            padding: 0 20px;
-            background-color: $blueHackages;
-            content: "EMAIL"; 
-        }
-        input[type="email"] {
-            border: none;
-            height: 50px;
-            width: 400px;  
-            color: grey;  
-        }
-        input[type="submit"] {
-            height: 50px;
-            padding: 0 20px;
-            background-color: $blueHackages;
-            border: none;  
-            color: white; 
-        }
+        width: span(5 of 15);
+        float: right;
     }
 
 }
@@ -147,7 +213,8 @@ header {
     // align-items: flex-start;
     background: greenyellow;
     .title {
-        align-self: center;    
+        align-self: center;  
+        
     }
     .listIcon {
         align-self: center;

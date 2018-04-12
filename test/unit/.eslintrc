@@ -3,5 +3,7 @@
     "jest": true
   },
   "globals": { 
+    "$": true,
+    "jQuery": true
   }
 }
