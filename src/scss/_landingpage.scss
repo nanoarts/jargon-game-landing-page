@@ -3,238 +3,381 @@
 @import "reset";
 
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Rammetto+One");
 
 @import "~susy/sass/susy";
 @import "~materialize-css/sass/materialize";
-
-
-
 $susy: (
-  'columns': susy-repeat(16),
-  'gutters':0.5em,
-  'spread': 'wide',
-  'container-spread': 'wide',
+  "columns": susy-repeat(16),
+  "gutters":.5em,
+  "spread": "wide",
+  "container-spread": "wide",
 );
 
 #app {
-    font-family: 'Roboto', sans-serif;
-  }
+  font-family: "Roboto", sans-serif;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    display: inline-block;
-  
-    margin: 0 10px;
-  }
+ul {
+  padding: 0;
+  list-style-type: none;
+}
 
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 50px;
+  a {
+@extend .z-depth-3;
+    display: block;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    background: #ff4081 ;
+    border-radius: 56px;
+    &:hover {
+      @extend .z-depth-5;
+    }
+    i {
+      width: 24px;
+      height: 24px;
+      padding-top: 12px;
+      color: white;
+    }
+  }
+}
 
 // COMPONENT A : HEADER / NAV
 .containerGlobal {
-    overflow: hidden;
+  overflow: hidden;
 }
 header {
-    .linkPlateform {
-        background-color: $blueHackages;
-        color: white;
-        height: 65px;
-        
-       
-        div:first-child {
-            float: left;
-            width: span(14 of 16);
-            // background: green;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            
-            h3 {
-                font-size: 20px;
-                margin-left: gutter();      
-            }
-        }
-        div:last-child {
-            float: right;
-            width: span(2 of 16);
-            // background: red;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            a {
-                background-color: $greenHackages;
-                color: white;
-                // padding: 20px;
-                border-radius:4px;
-                &:hover{
-                    @extend .z-depth-1;
-                }
-                
-              } 
-        }  
-    }
-    nav {
-        background-color: $greenHackages;
-        color: white;
-        height: 70px;
-        @extend .z-depth-1;
-        
-    
-        div:first-child {
-            float: left;
-            width: span(1 of 16);
-            // background: yellow;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            img {
-                margin-left: gutter();
-               
-            }
-        }
-        div:last-child {
-            float: right;
-            width: span(15 of 16);
-            // background: blue;
-            height: 100%;
-            display: flex;
-            align-items: center;
+  .linkPlateform {
+    height: 65px;
+    color: white;
+    background-color: $blueHackages;
+    div:first-child {
+      float: left;
+      display: flex;
+      align-items: center;
+      width: span(14 of 16);
 
-            a {
-                color: white;
-                text-decoration: none;
-                font-size: 12px;
-                :hover{
-                    text-decoration: beige;
-                }
-        }
-       
+// background: green;
+      height: 100%;
+      h3 {
+        margin-left: gutter();
+        font-size: 20px;
+      }
+    }
+    div:last-child {
+      float: right;
+      display: flex;
+      align-items: center;
+      width: span(2 of 16);
+
+// background: red;
+      height: 100%;
+      a {
+        color: white;
+        background-color: $greenHackages;
+// padding: 20px;
+        border-radius: 4px;
+        &:hover {
+          @extend .z-depth-1;
         }
       }
+    }
+  }
+  nav {
+@extend .z-depth-1;
+    height: 70px;
+    color: white;
+    background-color: $greenHackages;
+    div:first-child {
+      float: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: span(1 of 16);
 
+// background: yellow;
+      height: 100%;
+      img {
+        margin-left: gutter();
+      }
+    }
+    div:last-child {
+      float: right;
+      display: flex;
+      align-items: center;
+      width: span(15 of 16);
 
-
+// background: blue;
+      height: 100%;
+      a {
+        color: white;
+        font-size: 12px;
+        text-decoration: none;
+        :hover {
+          text-decoration: beige;
+        }
+      }
+    }
+  }
 }
 
 // COMPONENT B : whatIsJargon
 
 
-.whatIsJargon { 
-    @include hackagesgradient;
-    height: 100vh;
-    width: 100%;
+.whatIsJargon {
+  @include hackagesgradient;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  h1 {
+    color: white;
+    font-family: "Rammetto One", cursive;
+    font-size: 98px;
+  }
+  h3 {
+    color: white;
+    font-size: 20px;
+  }
+  .horizontal_flex {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    h1 {
-        font-family: 'Rammetto One', cursive;
-        color: white;
-        font-size: 98px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    a {
+      width: 222px;
+      margin: 50px;
+      color: white;
+      //    padding: 20px;
     }
-    h3 {
-        color: white;
-        font-size: 20px;
+    a:first-child {
+@extend .z-depth-1;
+      z-index: 1;
+      background-color: $greenHackages;
+      &:hover {
+@extend .z-depth-2;
+        z-index: 0;
+      }
     }
-    .horizontal_flex {
-        width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        a {
-          
-           width: 222px;
-           color: white;
-           margin: 50px;
-        //    padding: 20px;
-         }
-        a:first-child {
-            background-color: $greenHackages;
-            z-index: 1;
-            @extend .z-depth-1;
-            &:hover {
-                z-index: 0;   
-                @extend .z-depth-2;
-                             
-            }
-        }
-        a:last-child {
-            border: 1px solid white;
-            background-color: none;
-            text-decoration: none;
-        }
+    a:last-child {
+      text-decoration: none;
+      background-color: transparent;
+      border: 1px solid white;
     }
-    // .mascot {
-    //     img {
-    //         background-color: white;
-    //     }
-    // }
+  }
+  // .mascot {
+  //     img {
+  //         background-color: white;
+  //     }
+  // }
 }
 
 .keepMe {
-    background-color: $greenHackages;
-    color: whitesmoke;
-    margin: 50px auto;
-    overflow: hidden;
-    padding: 20px 0;
-    width: span(15 of 16);
-    display: flex;
-    align-items: center;
-    .text {
-        width: span(10 of 15);
-        float: left;
-        margin-left: gutter(of 16);
-        h3 {
-            font-size: 20px; 
-        }
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: span(15 of 16);
+  padding: 10px 0;
+  margin: 50px auto;
+  color: whitesmoke;
+  background-color: $greenHackages;
+  .text {
+    float: left;
+    width: span(10 of 15);
+    margin-left: gutter(of 16);
+    h3 {
+      font-size: 20px;
     }
-    form {
-        width: span(5 of 15);
-        float: right;
+  }
+  form {
+    float: right;
+    width: span(4 of 15);
+    input {
+      background-color: white;
+      &:before {
+        content: "EMAIL";
+      }
     }
-
+  }
 }
 
 // COMPONENT C : whyJoin
 
-
-.whyJoin {
-    width: 100%;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    // align-items: flex-start;
-    background: greenyellow;
-    .title {
-        align-self: center;  
-        
-    }
-    .listIcon {
-        align-self: center;
-    }
-    ul li div {
-        border: 1px solid 
-    }
-    // justify-content: center;
-}
-
-
-
-
-
-
-
-
-footer {
-  background-color: $blueHackages;
-  div {
-    color: white;
+// bar is using for why join and what say 
+.bar {
+  border-bottom: 2px solid grey;
+  .rounded {
+    width: 40px;
+    height: 40px;
+    margin: -20px auto;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 20px;
   }
 }
+
+.title {
+    margin-bottom: 20vh;
+    color: grey;
+  }
+
+.whyJoin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  // background: greenyellow;
+
+  .listIcon {
+    // background-color: red;
+    p {
+      margin: 10px 0;
+      color: $greenHackages;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  // justify-content: center;
+}
+
+
+// COMPONENT tryIt
+
+.tryIt {
+@include hackagesgradient;
+  display: flex;
+  width: span(16 of 16);
+  height: 100vh;
+  .tryTitle {
+    float: left;
+    order: 2;
+    width: span(1 of 3);
+    height: 128px;
+    margin: 0 auto;
+    color: white;
+    font-family: "Rammetto One", cursive;
+    text-align: center;
+    background-color: $blueHackages;
+  }
+  .category1 {
+    order: 1;
+  }
+  .category2 {
+    order: 3;
+  }
+  .category1,
+  .category2 {
+    width: span(1 of 3);
+    color: white;
+    text-align: center;
+    background-color: rgba(255,255,255,.2);
+    h3 {
+      background-color: $blueHackages;
+    }
+  }
+  .listCart {
+    position: absolute;
+    align-self: flex-end;
+    .cart {
+      float: left;
+      width: 150px;
+      height: 250px;
+      margin: 10px;
+      border: 1px solid white;
+      @include hackagesgradient;
+      transform: rotate(5deg);
+      &_f{
+      transform: rotate(10deg);
+          
+      }
+    }
+  }
+}
+
+// COMPONENT whatSayAbout
+
+.whatSayAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+  .cartList {
+    width: span(15 of 16);
+    .card-panel {
+        background-color: lightgrey;
+        opacity: 0.5;  
+    }
+    .centerselected {
+        background-color: $blueHackages;
+        opacity: 1;
+        height: 450px;  
+    }
+    .vuePerson {
+        width: 100%;
+        float: left;
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+            margin: 0 auto;
+        }
+    }
+    .overSize {
+      background-color: $blueHackages;
+      opacity: 1;
+    }
+  }
+}
+
+
+// COMPONENT joinTraining
+
+.joinTraining {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: blue;
+  iframe{
+      width: span(15 of 16);
+  }
+}
+
+// COMPONENT boardingGame
+
+.boardingGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  width: 100%;
+  height: 100vh;
+  background: green;
+}
+
+
+
+
